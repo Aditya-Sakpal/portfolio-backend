@@ -12,6 +12,13 @@ app.use(express.json());
 const HUGGING_FACE_API=process.env.HUGGING_FACE_API
 const CHAT_API_KEY=process.env.CHAT_API_KEY
 
+
+app.use(cors({
+  origin:['https://portfolio-frontend-iota-three.vercel.app'],
+  methods:['POST','GET'],
+  credentials:true
+}))
+
 app.use("/",(req,res)=>{
   res.send("Server is running")
 })
