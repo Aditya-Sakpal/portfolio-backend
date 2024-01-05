@@ -27,11 +27,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
-app.use("/",(req,res)=>{
-  res.send("Server is running")
-})
-
 app.get('/certifications', async (req, res) => {
     try {
       const certifications = await Certification.find();
