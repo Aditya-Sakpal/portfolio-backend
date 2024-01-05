@@ -14,7 +14,7 @@
   ],
   "headers": [
     {
-      "source": "https://portfolio-frontend-k1pv6296s-giga-coders-projects.vercel.app/(.*)",
+      "source": "/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
