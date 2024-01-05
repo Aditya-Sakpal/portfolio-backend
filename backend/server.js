@@ -3,6 +3,7 @@ const {Certification,Project,Experience,Feedback} = require('./connect');
 const cors = require('cors');
 const path = require("path");
 const axios = require('axios');
+require('dotenv').config({ path: './.env' });
 
 const app=express()
 const port = 4000
