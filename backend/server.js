@@ -20,9 +20,6 @@ app.use(cors({
   credentials:true
 }))
 
-app.use("/",(req,res)=>{
-  res.send("Server is running")
-})
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*'); // You can replace '*' with your frontend domain if needed
