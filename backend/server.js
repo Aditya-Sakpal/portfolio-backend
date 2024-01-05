@@ -69,6 +69,7 @@ app.get('/certifications', async (req, res) => {
         experience,
         feedbacks
       };
+      res.setHeader('Access-Control-Allow-Origin', '*')
       res.status(200).json(combinedData);
     }catch(e){
       res.status(500).send('Internal Server Error');
