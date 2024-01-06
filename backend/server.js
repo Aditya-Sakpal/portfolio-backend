@@ -66,17 +66,11 @@ app.get('/certifications', async (req, res) => {
 
   app.get('/data',async (req,res)=>{
     try{
-      const [certifications,projects,experience,feedbacks] = await Promise.all([
-        Certification.find(),
-        Project.find(),
-        Experience.find(),
-        Feedback.find()
+      const [experience] = await Promise.all([
+        Experience.find()
       ])
       const combinedData = {
-        certifications,
-        projects,
-        experience,
-        feedbacks
+        experience
       };
 
       res.status(200).json(combinedData);
