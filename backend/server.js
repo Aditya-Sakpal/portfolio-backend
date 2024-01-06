@@ -21,12 +21,17 @@ app.use(cors({
 }))
 
 
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*'); // You can replace '*' with your frontend domain if needed
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
+
+app.get("/",(req,res)=>{
+  res.send("Server is running")
+})
 
 app.get('/certifications', async (req, res) => {
     try {
