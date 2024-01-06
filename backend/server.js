@@ -66,13 +66,16 @@ app.get('/certifications', async (req, res) => {
 
   app.get('/data',async (req,res)=>{
     try{
-      const [experience] = await Promise.all([
-        Experience.find()
+      const [certifications,projects,feedbacks] = await Promise.all([
+        Certification.find(),
+        Project.find(),
+        Feedback.find()
       ])
       const combinedData = {
-        experience
+        certifications,
+        projects,
+        feedbacks
       };
-
       res.status(200).json(combinedData);
     }catch(e){
       res.status(500).send('Internal Server Error');
